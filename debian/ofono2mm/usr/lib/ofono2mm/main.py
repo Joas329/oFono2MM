@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#! /usr/bin/python3
 from dbus_next.aio import MessageBus
 from dbus_next.service import (ServiceInterface,
                                method, dbus_property)

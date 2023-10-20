@@ -1,0 +1,9 @@
+Package: ofono2mm
+Version: 0.0.0+git20230508051914.9d971c5.release
+Architecture: all
+Maintainer: Erik Inkinen <erik.inkinen@gmail.com>
+Installed-Size: 130
+Depends: python3:any, python3-dbus-next, modemmanager
+Section: misc
+Priority: optional
+Description: A simple python script implementing ModemManager DBus API and using ofono to manage the modem

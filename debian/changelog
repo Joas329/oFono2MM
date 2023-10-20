@@ -1,0 +1,86 @@
+ofono2mm (0.0.0+git20230508051914.9d971c5.release) trixie; urgency=medium
+
+  [ Erik Inkinen ]
+  * Initial commit
+  * Initial packaging
+  * Fix file permissions and shebang
+  * Fix file search paths
+  * Add service
+  * Correct a typo
+  * Add python3-dbus-next as dependency
+  * Add signal strength and equipment id
+  * Add ofono manager xml and rename the ofono modem xml
+  * Refactor the classess and objects so they make more sense
+  * Fix SIM missing state
+  * Put the different interfaces in separate files
+  * Handle oFono adding modems run time
+  * Handle changing oFono interfaces
+  * Fix calling coroutines
+  * Fix detecting modem run-time addition
+  * Fix subinterfaces not getting new data from oFono
+  * Give the port for NetworkManager
+  * Fix SetPowerState states
+  * Add workarounds for systemd to start on boot
+  * Re-add sleep as a temporary workaround
+  * Fix bugs related to detecting oFono interfaces
+  * Fix a bug which caused overloading and crashing
+  * Fix misc issues
+  * Fix SIM run-time detection
+  * Fix a crash while enabling the modem
+  * Finalize emitting only required property changes
+  * Fix exporting hardware information
+  * Finish Modem base interface properties for now
+  * Finish Modem 3gpp interface properties for now
+  * Finish SIM interface properties for now
+  * Implement org.freedesktop.ModemManager1.Modem.SetCurrentModes
+  * Implement scanning networks
+  * Implement registering to a foreign network
+  * Finish Sim Interface
+  * Enable receiving SMS messages
+  * Fix purple-mm-sms failing when launched by chatty on xdg-autostart
+  * Start implementing SMS sending
+  * Fix SIM unlocking
+  * Fix some properties and PropertiesChanged signal
+  * *.py: Remove unused imports
+  * Add (dummy) MMBearerInterface class and update bearer manipulation methods
+  * Add ofono_context.xml
+  * Create Bearers automatically
+  * Work on MMSimpleInterface and MMBearerInterface to get initial support for mobile data
+  * Fix Python module definition
+  * Remove a hardcoded and not used value from MMBearerInterface
+  * Reactivate the context if it gets disabled when it is being used it.
+  * Add a new MM bearer when a new oFono context is added
+  * Fix reactivation code order for bearers
+  * Handle bearer username and password.
+  * Fix minor styling things.
+  * Merge pull request #3 from droidian/feature/bullseye/mobile-data
+  * Merge pull request #4 from droidian/feature/bullseye/polkit
+  * Merge pull request #6 from droidian/feature/bullseye/g7-fixes
+  * Create LICENSE
+  * [ci] add CircleCI
+
+  [ Eugenio Paolantonio (g7) ]
+  * [ofono2mm] Invoke ofono2mm via a drop-in for the ModemManager service
+  * [ofono2mm] Move interfaces to the 'ofono2mm' python package
+  * [packaging] Depend on modemmanager
+  * [ofono2mm] PolicyKit: Allow users inside the 'radio' group to control ModemManager interfaces
+  * [ofono2mm] Introduce a single class to handle ofono's DBus interfaces
+  * [ofono2mm] Use the global cache provided by ofono2mm.ofono.Ofono to get dbus_next interfaces
+  * [ofono2mm] Add @async_retryable() decorator
+  * [ofono2mm] mm_bearer: retry connection indefinitely
+  * [ofono2mm] mm_bearer: fix reconnection on drops
+  * [ofono2mm] ofono_modem: add signature for org.ofono.SimAuthentication
+  * [ofono2mm] mm_bearer: fix typo
+  * [ofono2mm] mm_sim: fix crash when running without SimManager
+  * [ofono2mm] HACK: only export /ril_* modems
+  * [ofono2mm] utils: add decorator for asyncio.Lock()
+  * [ofono2mm] lock find_ofono_modems()
+
+  [ Eugenio Paolantonio ]
+  * Merge pull request #7 from nitanmarcel/feature/bookworm/initial-implementation
+
+  [ Marcel Alexandru Nitan ]
+  * [ofono2mm] Python 3.10 compatibility
+
+ -- Erik Inkinen <erik.inkinen@gmail.com>  Mon, 08 May 2023 08:19:14 +0300
+

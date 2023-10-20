@@ -1,0 +1,8 @@
+./main.py
+./ofono2mm
+./ofono.xml
+./ofono_modem.xml
+./ofono_operator.xml
+./ofono_context.xml
+./systemd/10-ofono2mm.conf
+./extra/ofono2mm-radio.pkla
