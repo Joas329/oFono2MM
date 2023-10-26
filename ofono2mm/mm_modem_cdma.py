@@ -8,7 +8,7 @@ class MMModemCDMAInterface(ServiceInterface):
         self.mm_modem = mm_modem
 
     @method()
-    async def Activate(self,):
+    async def Activate(self, carrier_code):
         return 
 
     @method()
