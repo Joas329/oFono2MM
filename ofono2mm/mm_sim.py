@@ -89,6 +89,22 @@ class MMSimInterface(ServiceInterface):
         if 'org.ofono.SimManager' in self.ofono_interfaces:
             await self.ofono_interfaces['org.ofono.SimManager'].call_change_pin('pin', old_pin, new_pin)
 
+    @method()
+    async def SetPreferredNetworks(self, preferred_networks: 'a(su)'):
+        network_entries = preferred_network.unpack()
+        for network in network_entries:
+            set_preferred_network(network)
+
+    async def set_preferred_network(self, preferred_network: 'su'):
+        network_name, network_id = preferred_network
+
+        current_networks = self.props['PreferredNetworks'].unpack()
+        new_network = (network_name, network_id)
+        updated_networks = current_networks + [preferred_network]
+        self.props['PreferredNetworks'] = Variant('a(su)', updated_networks)
+
+        await self.ofono_interfaces['org.ofono.RadioSettings'].call_set_property('TechnologyPreference', Variant('s', preferred_network))
+
     @dbus_property(access=PropertyAccess.READ)
     def Active(self) -> 'b':
         return self.props['Active'].value
